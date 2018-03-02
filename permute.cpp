@@ -47,7 +47,10 @@ int main(int argc, char** argv){
 		makePerm(perm, param, finished);
 		fullStr+=perm+"\n";
 	}
-	ofs.open("perms.txt", ofstream::out);
+	string fName = "perms";
+	fName+=param;
+	fName+=".txt";
+	ofs.open(fName, ofstream::out);
 	ofs<<fullStr;
 	ofs.close();
 	cout<<(float)(n-t)/CLOCKS_PER_SEC<<endl;
