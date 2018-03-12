@@ -53,7 +53,7 @@ int main(int argc, char** argv){
 	ofs.open(fName, ofstream::out);
 	ofs<<fullStr;
 	ofs.close();
-	ofs.open("timelog.txt", ofstream::out);
+	ofs.open("timelog.txt", ios::app);
 	ofs<<(float)(n-t)/CLOCKS_PER_SEC<<" "<<argv[1]<<endl;
 	ofs.close();
 	return 0;
