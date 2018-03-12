@@ -48,11 +48,13 @@ int main(int argc, char** argv){
 		fullStr+=perm+"\n";
 	}
 	string fName = "perms";
-	fName+=param;
+	fName+=argv[1];
 	fName+=".txt";
 	ofs.open(fName, ofstream::out);
 	ofs<<fullStr;
 	ofs.close();
-	cout<<(float)(n-t)/CLOCKS_PER_SEC<<endl;
+	ofs.open("timelog.txt", ofstream::out);
+	ofs<<(float)(n-t)/CLOCKS_PER_SEC<<" "<<argv[1]<<endl;
+	ofs.close();
 	return 0;
 }
